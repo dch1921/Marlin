@@ -347,7 +347,7 @@
  * the fan will turn on when any selected extruder is above the threshold.
  */
 #define E0_AUTO_FAN_PIN PE5
-#define E1_AUTO_FAN_PIN -1
+#define E1_AUTO_FAN_PIN PE5
 #define E2_AUTO_FAN_PIN -1
 #define E3_AUTO_FAN_PIN -1
 #define E4_AUTO_FAN_PIN -1
@@ -440,7 +440,7 @@
   #endif
 #endif
 
-//#define Z_DUAL_STEPPER_DRIVERS
+#define Z_DUAL_STEPPER_DRIVERS
 #if ENABLED(Z_DUAL_STEPPER_DRIVERS)
   //#define Z_DUAL_ENDSTOPS
   #if ENABLED(Z_DUAL_ENDSTOPS)
@@ -518,7 +518,7 @@
 // Homing hits each endstop, retracts by these distances, then does a slower bump.
 #define X_HOME_BUMP_MM 0
 #define Y_HOME_BUMP_MM 0
-#define Z_HOME_BUMP_MM 2
+#define Z_HOME_BUMP_MM 3
 #define HOMING_BUMP_DIVISOR { 2, 2, 4 }  // Re-Bump Speed Divisor (Divides the Homing Feedrate)
 //#define QUICK_HOME                     // If homing includes X and Y, do a diagonal move initially
 #define HOMING_BACKOFF_MM { 5, 5, 2 }  // (mm) Move away from the endstops after homing
@@ -600,10 +600,10 @@
  * Z Steppers Auto-Alignment
  * Add the G34 command to align multiple Z steppers using a bed probe.
  */
-//#define Z_STEPPER_AUTO_ALIGN
+#define Z_STEPPER_AUTO_ALIGN
 #if ENABLED(Z_STEPPER_AUTO_ALIGN)
   // Define probe X and Y positions for Z1, Z2 [, Z3]
-  #define Z_STEPPER_ALIGN_XY { {  10, 290 }, { 150,  10 }, { 290, 290 } }
+  #define Z_STEPPER_ALIGN_XY { {  30, 150 }, { 270,  150 } }//, { 290, 290 } }
 
   // Provide Z stepper positions for more rapid convergence in bed alignment.
   // Currently requires triple stepper drivers.
@@ -661,7 +661,7 @@
 //#define HOME_AFTER_DEACTIVATE  // Require rehoming after steppers are deactivated
 
 // Minimum time that a segment needs to take if the buffer is emptied
-#define DEFAULT_MINSEGMENTTIME        20000   // (ms)
+#define DEFAULT_MINSEGMENTTIME        30000   // (ms)
 
 // If defined the movements slow down when the look ahead buffer is only half full
 #define SLOWDOWN
@@ -1512,7 +1512,7 @@
 // The number of linear motions that can be in the plan at any give time.
 // THE BLOCK_BUFFER_SIZE NEEDS TO BE A POWER OF 2 (e.g. 8, 16, 32) because shifts and ors are used to do the ring-buffering.
 #if ENABLED(SDSUPPORT)
-  #define BLOCK_BUFFER_SIZE 16 // SD,LCD,Buttons take more memory, block buffer needs to be smaller
+  #define BLOCK_BUFFER_SIZE 64 // SD,LCD,Buttons take more memory, block buffer needs to be smaller
 #else
   #define BLOCK_BUFFER_SIZE 16 // maximize block buffer
 #endif
@@ -1521,7 +1521,7 @@
 
 // The ASCII buffer for serial input
 #define MAX_CMD_SIZE 96
-#define BUFSIZE 4
+#define BUFSIZE 16
 
 // Transmission to Host Buffer Size
 // To save 386 bytes of PROGMEM (and TX_BUFFER_SIZE+3 bytes of RAM) set to 0.
@@ -1646,7 +1646,7 @@
    */
   //#define TOOLCHANGE_PARK
   #if ENABLED(TOOLCHANGE_PARK)
-    #define TOOLCHANGE_PARK_XY    { X_MIN_POS + 10, Y_MIN_POS + 10 }
+    #define TOOLCHANGE_PARK_XY    { X_MIN_POS + 10, Y_MIN_POS + 20 }
     #define TOOLCHANGE_PARK_XY_FEEDRATE 6000  // (mm/m)
   #endif
 #endif
@@ -1839,7 +1839,7 @@
     #define Y_MICROSTEPS   64
     #define Y_RSENSE     0.11
     #define Y_CHAIN_POS     0
-    #define Y_CURRENT_HOME 300
+    #define Y_CURRENT_HOME 200
   #endif
 
   #if AXIS_IS_TMC(Y2)
@@ -1860,7 +1860,7 @@
 
   #if AXIS_IS_TMC(Z2)
     #define Z2_CURRENT    800
-    #define Z2_MICROSTEPS  16
+    #define Z2_MICROSTEPS  64
     #define Z2_RSENSE    0.11
     #define Z2_CHAIN_POS    0
     //#define Z2_CURRENT_HOME 400
@@ -1875,7 +1875,7 @@
   #endif
 
   #if AXIS_IS_TMC(E0)
-    #define E0_CURRENT    250
+    #define E0_CURRENT    800
     #define E0_MICROSTEPS  64
     #define E0_RSENSE    0.11
     #define E0_CHAIN_POS   -1
@@ -1883,7 +1883,7 @@
 
   #if AXIS_IS_TMC(E1)
     #define E1_CURRENT    800
-    #define E1_MICROSTEPS  16
+    #define E1_MICROSTEPS  64
     #define E1_RSENSE    0.11
     #define E1_CHAIN_POS   -1
   #endif
@@ -1961,10 +1961,10 @@
   #define  Z_SLAVE_ADDRESS 1
   #define X2_SLAVE_ADDRESS 0
   #define Y2_SLAVE_ADDRESS 0
-  #define Z2_SLAVE_ADDRESS 0
+  #define Z2_SLAVE_ADDRESS 1
   #define Z3_SLAVE_ADDRESS 0
   #define E0_SLAVE_ADDRESS 1
-  #define E1_SLAVE_ADDRESS 0
+  #define E1_SLAVE_ADDRESS 1
   #define E2_SLAVE_ADDRESS 0
   #define E3_SLAVE_ADDRESS 0
   #define E4_SLAVE_ADDRESS 0
@@ -2087,7 +2087,7 @@
     #define Y_STALL_SENSITIVITY  100
     //#define Z_STALL_SENSITIVITY  8
     //#define SPI_ENDSTOPS              // TMC2130 only
-    #define IMPROVE_HOMING_RELIABILITY
+    //#define IMPROVE_HOMING_RELIABILITY
   #endif
 
   /**
@@ -2719,10 +2719,10 @@
 /**
  * WiFi Support (Espressif ESP32 WiFi)
  */
-#define WIFISUPPORT
+//#define WIFISUPPORT
 #if ENABLED(WIFISUPPORT)
-  #define WIFI_SSID "Tell My Wifi Love Her"
-  #define WIFI_PWD  "Whambam1023"
+  #define WIFI_SSID "xx"
+  #define WIFI_PWD  "xx"
   #define WEBSUPPORT        // Start a webserver with auto-discovery
   #define OTASUPPORT        // Support over-the-air firmware updates
 #endif
