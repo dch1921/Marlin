@@ -290,6 +290,9 @@
 // before setting a PWM value. (Does not work with software PWM for fan on Sanguinololu)
 //#define FAN_KICKSTART_TIME 100
 
+// Some coolers may require a non-zero "off" state.
+//#define FAN_OFF_PWM  1
+
 /**
  * PWM Fan Scaling
  *
@@ -954,6 +957,8 @@
    */
   #define POWER_LOSS_RECOVERY
   #if ENABLED(POWER_LOSS_RECOVERY)
+    //#define BACKUP_POWER_SUPPLY       // Backup power / UPS to move the steppers on power loss
+    //#define POWER_LOSS_ZRAISE       2 // (mm) Z axis raise on resume (on power loss with UPS)
     //#define POWER_LOSS_PIN         44 // Pin to detect power loss
     //#define POWER_LOSS_STATE     HIGH // State of pin indicating power loss
     //#define POWER_LOSS_PULL           // Set pullup / pulldown as appropriate
@@ -1266,6 +1271,9 @@
 
   // Output extra debug info for Touch UI events
   //#define TOUCH_UI_DEBUG
+
+  // Developer menu (accessed by touching "About Printer" copyright text)
+  //#define TOUCH_UI_DEVELOPER_MENU
 #endif
 
 //
@@ -1889,31 +1897,31 @@
   #endif
 
   #if AXIS_IS_TMC(E2)
-    #define E2_CURRENT    800
-    #define E2_MICROSTEPS  16
-    #define E2_RSENSE    0.11
-    #define E2_CHAIN_POS   -1
+    #define E2_CURRENT      800
+    #define E2_MICROSTEPS    16
+    #define E2_RSENSE         0.11
+    #define E2_CHAIN_POS     -1
   #endif
 
   #if AXIS_IS_TMC(E3)
-    #define E3_CURRENT    800
-    #define E3_MICROSTEPS  16
-    #define E3_RSENSE    0.11
-    #define E3_CHAIN_POS   -1
+    #define E3_CURRENT      800
+    #define E3_MICROSTEPS    16
+    #define E3_RSENSE         0.11
+    #define E3_CHAIN_POS     -1
   #endif
 
   #if AXIS_IS_TMC(E4)
-    #define E4_CURRENT    800
-    #define E4_MICROSTEPS  16
-    #define E4_RSENSE    0.11
-    #define E4_CHAIN_POS   -1
+    #define E4_CURRENT      800
+    #define E4_MICROSTEPS    16
+    #define E4_RSENSE         0.11
+    #define E4_CHAIN_POS     -1
   #endif
 
   #if AXIS_IS_TMC(E5)
-    #define E5_CURRENT    800
-    #define E5_MICROSTEPS  16
-    #define E5_RSENSE    0.11
-    #define E5_CHAIN_POS   -1
+    #define E5_CURRENT      800
+    #define E5_MICROSTEPS    16
+    #define E5_RSENSE         0.11
+    #define E5_CHAIN_POS     -1
   #endif
 
   /**
@@ -2109,8 +2117,8 @@
    *
    * Example:
    * #define TMC_ADV() { \
-   *   stepperX.diag0_temp_prewarn(1); \
-   *   stepperY.interpolate(0); \
+   *   stepperX.diag0_otpw(1); \
+   *   stepperY.intpol(0); \
    * }
    */
   #define TMC_ADV() {  }
