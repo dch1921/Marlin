@@ -1822,7 +1822,7 @@
  * https://github.com/teemuatlut/TMCStepper
  */
 #if HAS_TRINAMIC
-  #define USE_HOMING_CURRENT          // Use different driver current for sensorless homing
+  //#define USE_HOMING_CURRENT          // Use different driver current for sensorless homing
   #define HOLD_MULTIPLIER    0.5  // Scales down the holding current from run current
   #define INTERPOLATE       true  // Interpolate X/Y/Z_MICROSTEPS to 256
 
