@@ -959,18 +959,12 @@
 #define LCD_SHOW_E_TOTAL
 
 #if HAS_GRAPHICAL_LCD && HAS_PRINT_PROGRESS
-<<<<<<< HEAD
   #define PRINT_PROGRESS_SHOW_DECIMALS // Show progress with decimal digits
   #define SHOW_REMAINING_TIME          // Display estimated time to completion
-  #define ROTATE_PROGRESS_DISPLAY      // Display (P)rogress, (E)lapsed, and (R)emaining time
-=======
-  //#define PRINT_PROGRESS_SHOW_DECIMALS // Show progress with decimal digits
-  //#define SHOW_REMAINING_TIME          // Display estimated time to completion
   #if ENABLED(SHOW_REMAINING_TIME)
     //#define USE_M73_REMAINING_TIME     // Use remaining time from M73 command instead of estimation
-    //#define ROTATE_PROGRESS_DISPLAY    // Display (P)rogress, (E)lapsed, and (R)emaining time
+    #define ROTATE_PROGRESS_DISPLAY    // Display (P)rogress, (E)lapsed, and (R)emaining time
   #endif
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21
 #endif
 
 #if HAS_CHARACTER_LCD && HAS_PRINT_PROGRESS
@@ -1886,76 +1880,7 @@
   #define INTERPOLATE       true  // Interpolate X/Y/Z_MICROSTEPS to 256
 
   #if AXIS_IS_TMC(X)
-<<<<<<< HEAD
-    #define X_CURRENT     800  // (mA) RMS current. Multiply by 1.414 for peak current.
-    #define X_MICROSTEPS   64  // 0..256
-    #define X_RSENSE     0.11
-    #define X_CHAIN_POS     0  // 0 - Not chained, 1 - MCU MOSI connected, 2 - next in chain, ...
-    #define X_CURRENT_HOME 600 // (mA) RMS current for sensorlesshoming
-  #endif
-
-  #if AXIS_IS_TMC(X2)
-    #define X2_CURRENT    800
-    #define X2_MICROSTEPS  16
-    #define X2_RSENSE    0.11
-    #define X2_CHAIN_POS    0
-    //#define X2_CURRENT_HOME 400
-  #endif
-
-  #if AXIS_IS_TMC(Y)
-    #define Y_CURRENT     800
-    #define Y_MICROSTEPS   64
-    #define Y_RSENSE     0.11
-    #define Y_CHAIN_POS     0
-    #define Y_CURRENT_HOME 600
-  #endif
-
-  #if AXIS_IS_TMC(Y2)
-    #define Y2_CURRENT    800
-    #define Y2_MICROSTEPS  16
-    #define Y2_RSENSE    0.11
-    #define Y2_CHAIN_POS    0
-    //#define Y2_CURRENT_HOME 400
-  #endif
-
-  #if AXIS_IS_TMC(Z)
-    #define Z_CURRENT     800
-    #define Z_MICROSTEPS   64
-    #define Z_RSENSE     0.11
-    #define Z_CHAIN_POS     0
-    //#define Z_CURRENT_HOME 400
-  #endif
-
-  #if AXIS_IS_TMC(Z2)
-    #define Z2_CURRENT    800
-    #define Z2_MICROSTEPS  64
-    #define Z2_RSENSE    0.11
-    #define Z2_CHAIN_POS    0
-    //#define Z2_CURRENT_HOME 400
-  #endif
-
-  #if AXIS_IS_TMC(Z3)
-    #define Z3_CURRENT    800
-    #define Z3_MICROSTEPS  16
-    #define Z3_RSENSE    0.11
-    #define Z3_CHAIN_POS    0
-    //#define Z3_CURRENT_HOME 400
-  #endif
-
-  #if AXIS_IS_TMC(E0)
-    #define E0_CURRENT    800
-    #define E0_MICROSTEPS  64
-    #define E0_RSENSE    0.11
-    #define E0_CHAIN_POS   -1
-  #endif
-
-  #if AXIS_IS_TMC(E1)
-    #define E1_CURRENT    800
-    #define E1_MICROSTEPS  64
-    #define E1_RSENSE    0.11
-    #define E1_CHAIN_POS   -1
-=======
-    #define X_CURRENT       800        // (mA) RMS current. Multiply by 1.414 for peak current.
+    #define X_CURRENT       1000        // (mA) RMS current. Multiply by 1.414 for peak current.
     #define X_CURRENT_HOME  X_CURRENT  // (mA) RMS current for sensorless homing
     #define X_MICROSTEPS     16    // 0..256
     #define X_RSENSE          0.11
@@ -1971,7 +1896,7 @@
   #endif
 
   #if AXIS_IS_TMC(Y)
-    #define Y_CURRENT       800
+    #define Y_CURRENT       1000
     #define Y_CURRENT_HOME  Y_CURRENT
     #define Y_MICROSTEPS     16
     #define Y_RSENSE          0.11
@@ -1989,7 +1914,7 @@
   #if AXIS_IS_TMC(Z)
     #define Z_CURRENT       800
     #define Z_CURRENT_HOME  Z_CURRENT
-    #define Z_MICROSTEPS     16
+    #define Z_MICROSTEPS     32
     #define Z_RSENSE          0.11
     #define Z_CHAIN_POS      -1
   #endif
@@ -1997,7 +1922,7 @@
   #if AXIS_IS_TMC(Z2)
     #define Z2_CURRENT      800
     #define Z2_CURRENT_HOME Z2_CURRENT
-    #define Z2_MICROSTEPS    16
+    #define Z2_MICROSTEPS    32
     #define Z2_RSENSE         0.11
     #define Z2_CHAIN_POS     -1
   #endif
@@ -2011,8 +1936,8 @@
   #endif
 
   #if AXIS_IS_TMC(E0)
-    #define E0_CURRENT      800
-    #define E0_MICROSTEPS    16
+    #define E0_CURRENT      250
+    #define E0_MICROSTEPS    64
     #define E0_RSENSE         0.11
     #define E0_CHAIN_POS     -1
   #endif
@@ -2022,7 +1947,6 @@
     #define E1_MICROSTEPS    16
     #define E1_RSENSE         0.11
     #define E1_CHAIN_POS     -1
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21
   #endif
 
   #if AXIS_IS_TMC(E2)
@@ -2224,12 +2148,8 @@
     #define Y_STALL_SENSITIVITY  100
     //#define Z_STALL_SENSITIVITY  8
     //#define SPI_ENDSTOPS              // TMC2130 only
-<<<<<<< HEAD
-    #define IMPROVE_HOMING_RELIABILITY
-=======
     //#define HOME_USING_SPREADCYCLE
-    //#define IMPROVE_HOMING_RELIABILITY
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21
+    #define IMPROVE_HOMING_RELIABILITY
   #endif
 
   /**
