@@ -720,7 +720,10 @@ void kill(PGM_P const lcd_error/*=nullptr*/, PGM_P const lcd_component/*=nullptr
   SERIAL_ERROR_MSG(MSG_ERR_KILLED);
 
   #if HAS_DISPLAY
+<<<<<<< HEAD
     extern const char NUL_STR[];
+=======
+>>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21
     ui.kill_screen(lcd_error ?: GET_TEXT(MSG_KILLED), lcd_component ?: NUL_STR);
   #else
     UNUSED(lcd_error);

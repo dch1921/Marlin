@@ -27,7 +27,11 @@ env:
 
   # Extended STM32 Environments
   - TEST_PLATFORM="STM32F103RC_bigtree"
+<<<<<<< HEAD
   - TEST_PLATFORM="STM32F103RC_bigtree_NOUSB"
+=======
+  - TEST_PLATFORM="STM32F103RC_bigtree_USB"
+>>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21
   - TEST_PLATFORM="STM32F103RC_fysetc"
   - TEST_PLATFORM="jgaurora_a5s_a1"
   - TEST_PLATFORM="STM32F103VE_longer"

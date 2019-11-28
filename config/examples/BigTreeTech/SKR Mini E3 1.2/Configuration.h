@@ -1445,7 +1445,11 @@
  *    P1  Raise the nozzle always to Z-park height.
  *    P2  Raise the nozzle by Z-park amount, limited to Z_MAX_POS.
  */
+<<<<<<< HEAD
 //#define NOZZLE_PARK_FEATURE
+=======
+#define NOZZLE_PARK_FEATURE
+>>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21
 
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Specify a park position as { X, Y, Z_raise }
@@ -2016,10 +2020,17 @@
 //#define MALYAN_LCD
 
 //
+<<<<<<< HEAD
 // LulzBot Color Touch UI for FTDI EVE (FT800/FT810) displays
 // See Configuration_adv.h for all configuration options.
 //
 //#define LULZBOT_TOUCH_UI
+=======
+// Touch UI for FTDI EVE (FT800/FT810) displays
+// See Configuration_adv.h for all configuration options.
+//
+//#define TOUCH_UI_FTDI_EVE
+>>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21
 
 //
 // Third-party or vendor-customized controller interfaces.

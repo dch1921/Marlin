@@ -62,6 +62,7 @@
 
 #if HAS_BED_PROBE || ENABLED(PROBE_MANUALLY)
   #if IS_KINEMATIC
+<<<<<<< HEAD
     constexpr float printable_radius =
       #if ENABLED(DELTA)
         DELTA_PRINTABLE_RADIUS;
@@ -76,39 +77,89 @@
         #else
           MIN_PROBE_EDGE;
         #endif
+=======
+    constexpr float printable_radius = (
+      #if ENABLED(DELTA)
+        DELTA_PRINTABLE_RADIUS
+      #elif IS_SCARA
+        SCARA_PRINTABLE_RADIUS
+      #endif
+    );
+
+    inline float probe_radius() {
+      return printable_radius - (
+        #if HAS_BED_PROBE
+          _MAX(MIN_PROBE_EDGE, HYPOT(probe_offset.x, probe_offset.y))
+        #else
+          MIN_PROBE_EDGE
+        #endif
+      );
+>>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21
     }
   #endif
 
   inline float probe_min_x() {
+<<<<<<< HEAD
     return
       #if IS_KINEMATIC
         (X_CENTER) - probe_radius();
       #else
         _MAX((X_MIN_BED) + (MIN_PROBE_EDGE_LEFT), (X_MIN_POS) + probe_offset.x);
+=======
+    return (
+      #if IS_KINEMATIC
+        (X_CENTER) - probe_radius()
+      #else
+        _MAX((X_MIN_BED) + (MIN_PROBE_EDGE_LEFT), (X_MIN_POS) + probe_offset.x)
+>>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21
       #endif
   }
   inline float probe_max_x() {
+<<<<<<< HEAD
     return
       #if IS_KINEMATIC
         (X_CENTER) + probe_radius();
       #else
         _MIN((X_MAX_BED) - (MIN_PROBE_EDGE_RIGHT), (X_MAX_POS) + probe_offset.x);
+=======
+    return (
+      #if IS_KINEMATIC
+        (X_CENTER) + probe_radius()
+      #else
+        _MIN((X_MAX_BED) - (MIN_PROBE_EDGE_RIGHT), (X_MAX_POS) + probe_offset.x)
+>>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21
       #endif
   }
   inline float probe_min_y() {
+<<<<<<< HEAD
     return 
       #if IS_KINEMATIC
         (Y_CENTER) - probe_radius();
       #else
         _MAX((Y_MIN_BED) + (MIN_PROBE_EDGE_FRONT), (Y_MIN_POS) + probe_offset.y);
+=======
+    return (
+      #if IS_KINEMATIC
+        (Y_CENTER) - probe_radius()
+      #else
+        _MAX((Y_MIN_BED) + (MIN_PROBE_EDGE_FRONT), (Y_MIN_POS) + probe_offset.y)
+>>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21
       #endif
   }
   inline float probe_max_y() {
+<<<<<<< HEAD
     return 
       #if IS_KINEMATIC
         (Y_CENTER) + probe_radius();
       #else
         _MIN((Y_MAX_BED) - (MIN_PROBE_EDGE_BACK), (Y_MAX_POS) + probe_offset.y);
+=======
+    return (
+      #if IS_KINEMATIC
+        (Y_CENTER) + probe_radius()
+      #else
+        _MIN((Y_MAX_BED) - (MIN_PROBE_EDGE_BACK), (Y_MAX_POS) + probe_offset.y)
+>>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21
       #endif
   }
 

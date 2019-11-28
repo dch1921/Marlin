@@ -24,6 +24,20 @@
 #define BOARD_INFO_NAME "BIGTREE SKR 1.1"
 
 //
+<<<<<<< HEAD:Marlin/src/pins/lpc1768/pins_BTT_SKR_V1_1.h
+=======
+// Limit Switches
+//
+
+#define X_MIN_PIN          P1_29
+#define X_MAX_PIN          P1_28
+#define Y_MIN_PIN          P1_27
+#define Y_MAX_PIN          P1_26
+#define Z_MIN_PIN          P1_25
+#define Z_MAX_PIN          P1_24
+
+//
+>>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/pins/lpc1768/pins_BIGTREE_SKR_V1.1.h
 // Steppers
 //
 #define X_STEP_PIN         P0_04

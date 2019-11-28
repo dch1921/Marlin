@@ -238,6 +238,7 @@ void GcodeSuite::G28(const bool always_home_all) {
     }
   #endif
 
+<<<<<<< HEAD
    #if ENABLED(USE_HOMING_CURRENT)
     #ifdef X_CURRENT_HOME
       TMC_SAVE_CURRENT_X = stepperX.getMilliamps();
@@ -275,6 +276,9 @@ void GcodeSuite::G28(const bool always_home_all) {
     #endif
   #endif
 
+=======
+  // Home (O)nly if position is unknown
+>>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21
   if (!homing_needed() && parser.boolval('O')) {
     if (DEBUGGING(LEVELING)) DEBUG_ECHOLNPGM("> homing not needed, skip\n<<< G28");
     return;

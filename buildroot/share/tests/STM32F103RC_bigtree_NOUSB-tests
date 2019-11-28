@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Build tests for STM32F103RC Bigtreetech (SKR Mini E3)
+# Build tests for STM32F103RC Bigtreetech (SKR Mini v1.1)
 #
 
 # exit on first failure
@@ -10,10 +10,14 @@ set -e
 # Build with the default configurations
 #
 restore_configs
+<<<<<<< HEAD:buildroot/share/tests/STM32F103RC_bigtree_NOUSB-tests
 opt_set MOTHERBOARD BOARD_BTT_SKR_MINI_E3_V1_0
+=======
+opt_set MOTHERBOARD BOARD_BIGTREE_SKR_MINI_V1_1
+>>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:buildroot/share/tests/STM32F103RC_bigtree_USB-tests
 opt_set SERIAL_PORT 1
 opt_set SERIAL_PORT_2 -1
-exec_test $1 $2 "Bigtreetech SKR Mini E3 - Basic Configuration"
+exec_test $1 $2 "Bigtreetech SKR Mini v1.1 - Basic Configuration"
 
 # clean up
 restore_configs

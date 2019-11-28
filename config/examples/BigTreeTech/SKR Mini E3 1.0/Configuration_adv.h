@@ -1192,9 +1192,15 @@
 #endif // HAS_GRAPHICAL_LCD
 
 //
+<<<<<<< HEAD
 // Lulzbot Touch UI
 //
 #if ENABLED(LULZBOT_TOUCH_UI)
+=======
+// Touch UI for the FTDI Embedded Video Engine (EVE)
+//
+#if ENABLED(TOUCH_UI_FTDI_EVE)
+>>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21
   // Display board used
   //#define LCD_FTDI_VM800B35A        // FTDI 3.5" with FT800 (320x240)
   //#define LCD_4DSYSTEMS_4DLCD_FT843 // 4D Systems 4.3" (480x272)
@@ -1670,7 +1676,11 @@
  * Requires NOZZLE_PARK_FEATURE.
  * This feature is required for the default FILAMENT_RUNOUT_SCRIPT.
  */
+<<<<<<< HEAD
 //#define ADVANCED_PAUSE_FEATURE
+=======
+#define ADVANCED_PAUSE_FEATURE
+>>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21
 #if ENABLED(ADVANCED_PAUSE_FEATURE)
   #define PAUSE_PARK_RETRACT_FEEDRATE         60  // (mm/s) Initial retract feedrate.
   #define PAUSE_PARK_RETRACT_LENGTH            2  // (mm) Initial retract.

@@ -2016,10 +2016,17 @@
 //#define MALYAN_LCD
 
 //
+<<<<<<< HEAD
 // LulzBot Color Touch UI for FTDI EVE (FT800/FT810) displays
 // See Configuration_adv.h for all configuration options.
 //
 //#define LULZBOT_TOUCH_UI
+=======
+// Touch UI for FTDI EVE (FT800/FT810) displays
+// See Configuration_adv.h for all configuration options.
+//
+//#define TOUCH_UI_FTDI_EVE
+>>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21
 
 //
 // Third-party or vendor-customized controller interfaces.
