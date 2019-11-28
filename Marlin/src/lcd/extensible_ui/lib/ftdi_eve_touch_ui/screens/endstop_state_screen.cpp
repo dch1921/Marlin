@@ -52,15 +52,6 @@ void EndstopStatesScreen::onRedraw(draw_mode_t) {
   #define PIN_ENABLED(X,Y,LABEL,PIN,INV)  cmd.enabled(1).colors(READ(PIN##_PIN) != INV ? action_btn : normal_btn).PIN_BTN(X,Y,PIN,LABEL);
   #define PIN_DISABLED(X,Y,LABEL,PIN)     cmd.enabled(0).PIN_BTN(X,Y,PIN,LABEL);
 
-<<<<<<< HEAD:Marlin/src/lcd/extensible_ui/lib/lulzbot/screens/endstop_state_screen.cpp
-  #ifdef TOUCH_UI_PORTRAIT
-  cmd.font(font_large)
-  #else
-  cmd.font(font_medium)
-  #endif
-     .text(BTN_POS(1,1), BTN_SIZE(6,1), GET_TEXT_F(MSG_LCD_ENDSTOPS))
-     .font(font_tiny);
-=======
   cmd.font(
     #ifdef TOUCH_UI_PORTRAIT
       font_large
@@ -70,7 +61,6 @@ void EndstopStatesScreen::onRedraw(draw_mode_t) {
   )
   .text(BTN_POS(1,1), BTN_SIZE(6,1), GET_TEXT_F(MSG_LCD_ENDSTOPS))
   .font(font_tiny);
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/lcd/extensible_ui/lib/ftdi_eve_touch_ui/screens/endstop_state_screen.cpp
   #if PIN_EXISTS(X_MAX)
     PIN_ENABLED (1, 2, PSTR(MSG_X_MAX), X_MAX, X_MAX_ENDSTOP_INVERTING)
   #else

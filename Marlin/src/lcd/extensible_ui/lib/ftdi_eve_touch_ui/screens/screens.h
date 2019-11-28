@@ -72,11 +72,7 @@ enum {
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   FILAMENT_RUNOUT_SCREEN_CACHE,
 #endif
-<<<<<<< HEAD:Marlin/src/lcd/extensible_ui/lib/lulzbot/screens/screens.h
-#ifdef TOUCH_UI_LULZBOT_BIO
-=======
 #if ENABLED(TOUCH_UI_LULZBOT_BIO)
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/lcd/extensible_ui/lib/ftdi_eve_touch_ui/screens/screens.h
   PRINTING_SCREEN_CACHE,
 #endif
 #if ENABLED(TOUCH_UI_COCOA_PRESS)

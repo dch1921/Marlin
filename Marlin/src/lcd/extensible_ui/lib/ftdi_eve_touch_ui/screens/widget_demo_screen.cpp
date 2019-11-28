@@ -22,11 +22,7 @@
 
 #include "../config.h"
 
-<<<<<<< HEAD:Marlin/src/lcd/extensible_ui/lib/lulzbot/screens/widget_demo_screen.cpp
-#if BOTH(LULZBOT_TOUCH_UI, TOUCH_UI_DEVELOPER_MENU)
-=======
 #if BOTH(TOUCH_UI_FTDI_EVE, TOUCH_UI_DEVELOPER_MENU)
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/lcd/extensible_ui/lib/ftdi_eve_touch_ui/screens/widget_demo_screen.cpp
 
 #include "screens.h"
 
@@ -159,8 +155,4 @@ void WidgetsScreen::onIdle() {
   BaseScreen::onIdle();
 }
 
-<<<<<<< HEAD:Marlin/src/lcd/extensible_ui/lib/lulzbot/screens/widget_demo_screen.cpp
-#endif // LULZBOT_TOUCH_UI && TOUCH_UI_DEVELOPER_MENU
-=======
 #endif // TOUCH_UI_FTDI_EVE && TOUCH_UI_DEVELOPER_MENU
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/lcd/extensible_ui/lib/ftdi_eve_touch_ui/screens/widget_demo_screen.cpp

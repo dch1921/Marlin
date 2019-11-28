@@ -37,11 +37,7 @@
  */
 
 // Change EEPROM version if the structure changes
-<<<<<<< HEAD
-#define EEPROM_VERSION "V72"
-=======
 #define EEPROM_VERSION "V74"
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21
 #define EEPROM_OFFSET 100
 
 // Check the integrity of data offsets.
@@ -789,20 +785,12 @@ void MarlinSettings::postprocess() {
     {
       _FIELD_TEST(hotendPID);
       HOTEND_LOOP() {
-<<<<<<< HEAD
-        PIDC_t pidc = {
-                       PID_PARAM(Kp, e),
-          unscalePID_i(PID_PARAM(Ki, e)),
-          unscalePID_d(PID_PARAM(Kd, e)),
-                       PID_PARAM(Kc, e)
-=======
         PIDCF_t pidcf = {
                        PID_PARAM(Kp, e),
           unscalePID_i(PID_PARAM(Ki, e)),
           unscalePID_d(PID_PARAM(Kd, e)),
                        PID_PARAM(Kc, e),
                        PID_PARAM(Kf, e)
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21
         };
         EEPROM_WRITE(pidcf);
       }
@@ -1602,19 +1590,11 @@ void MarlinSettings::postprocess() {
           PIDCF_t pidcf;
           EEPROM_READ(pidcf);
           #if ENABLED(PIDTEMP)
-<<<<<<< HEAD
-            if (!validating && pidc.Kp != DUMMY_PID_VALUE) {
-              // Scale PID values since EEPROM values are unscaled
-              PID_PARAM(Kp, e) = pidc.Kp;
-              PID_PARAM(Ki, e) = scalePID_i(pidc.Ki);
-              PID_PARAM(Kd, e) = scalePID_d(pidc.Kd);
-=======
             if (!validating && pidcf.Kp != DUMMY_PID_VALUE) {
               // Scale PID values since EEPROM values are unscaled
               PID_PARAM(Kp, e) = pidcf.Kp;
               PID_PARAM(Ki, e) = scalePID_i(pidcf.Ki);
               PID_PARAM(Kd, e) = scalePID_d(pidcf.Kd);
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21
               #if ENABLED(PID_EXTRUSION_SCALING)
                 PID_PARAM(Kc, e) = pidcf.Kc;
               #endif

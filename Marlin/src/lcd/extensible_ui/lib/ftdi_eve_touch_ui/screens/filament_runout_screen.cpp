@@ -41,11 +41,7 @@ void FilamentRunoutScreen::onRedraw(draw_mode_t what) {
     w.units(GET_TEXT_F(MSG_UNITS_MM));
     w.precision(0);
     w.color(e_axis);
-<<<<<<< HEAD:Marlin/src/lcd/extensible_ui/lib/lulzbot/screens/filament_runout_screen.cpp
-    w.adjuster( 10, NUL_STR, getFilamentRunoutDistance_mm(), getFilamentRunoutEnabled());
-=======
     w.adjuster( 10, progmem_str(NUL_STR), getFilamentRunoutDistance_mm(), getFilamentRunoutEnabled());
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/lcd/extensible_ui/lib/ftdi_eve_touch_ui/screens/filament_runout_screen.cpp
     w.increments();
   #endif
 }

@@ -38,13 +38,6 @@ void BacklashCompensationScreen::onRedraw(draw_mode_t what) {
   w.color(y_axis).adjuster(4, GET_TEXT_F(MSG_AXIS_Y), getAxisBacklash_mm(Y));
   w.color(z_axis).adjuster(6, GET_TEXT_F(MSG_AXIS_Z), getAxisBacklash_mm(Z));
   #if ENABLED(CALIBRATION_GCODE)
-<<<<<<< HEAD:Marlin/src/lcd/extensible_ui/lib/lulzbot/screens/backlash_compensation_screen.cpp
-  w.button(12, GET_TEXT_F(MSG_MEASURE_AUTOMATICALLY));
-  #endif
-  w.color(other).adjuster(8,  GET_TEXT_F(MSG_SMOOTHING), getBacklashSmoothing_mm());
-  w.precision(0).units(GET_TEXT_F(MSG_UNITS_PERCENT))
-                .adjuster(10, GET_TEXT_F(MSG_CORRECTION), getBacklashCorrection_percent());
-=======
     w.button(12, GET_TEXT_F(MSG_MEASURE_AUTOMATICALLY));
   #endif
   #ifdef BACKLASH_SMOOTHING_MM
@@ -52,7 +45,6 @@ void BacklashCompensationScreen::onRedraw(draw_mode_t what) {
   #endif
   w.precision(0).units(GET_TEXT_F(MSG_UNITS_PERCENT))
                 .adjuster(10, GET_TEXT_F(MSG_BACKLASH_CORRECTION), getBacklashCorrection_percent());
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/lcd/extensible_ui/lib/ftdi_eve_touch_ui/screens/backlash_compensation_screen.cpp
   w.precision(2).increments();
 }
 

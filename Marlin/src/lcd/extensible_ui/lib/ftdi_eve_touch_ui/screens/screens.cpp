@@ -99,21 +99,14 @@ SCREEN_TABLE {
   DECL_SCREEN(LockScreen),
   DECL_SCREEN(FilesScreen),
   DECL_SCREEN(EndstopStatesScreen),
-<<<<<<< HEAD:Marlin/src/lcd/extensible_ui/lib/lulzbot/screens/screens.cpp
-#ifdef TOUCH_UI_LULZBOT_BIO
-=======
 #if ENABLED(TOUCH_UI_LULZBOT_BIO)
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/lcd/extensible_ui/lib/ftdi_eve_touch_ui/screens/screens.cpp
   DECL_SCREEN(BioPrintingDialogBox),
   DECL_SCREEN(BioConfirmHomeXYZ),
   DECL_SCREEN(BioConfirmHomeE),
 #endif
-<<<<<<< HEAD:Marlin/src/lcd/extensible_ui/lib/lulzbot/screens/screens.cpp
-=======
 #if ENABLED(TOUCH_UI_COCOA_PRESS)
   DECL_SCREEN(PreheatTimerScreen),
 #endif
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/lcd/extensible_ui/lib/ftdi_eve_touch_ui/screens/screens.cpp
 #if ENABLED(TOUCH_UI_DEVELOPER_MENU)
   DECL_SCREEN(DeveloperMenu),
   DECL_SCREEN(ConfirmEraseFlashDialogBox),

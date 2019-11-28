@@ -144,27 +144,17 @@
      *      (MOSI) PB7  | · · | PB8  (LCD_RS)
      *    (LCD_A0) PB9  | · · | PA10 (BTN_EN2)
      *            RESET | · · | PA9  (BTN_EN1)
-<<<<<<< HEAD:Marlin/src/pins/stm32/pins_BTT_SKR_MINI_E3.h
-     *   (BTN_ENC) PB6  | · · | PA15 (SCK)
-=======
      *   (BTN_ENC) PB6  | · · | PB5  (SCK)
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/pins/stm32/pins_BIGTREE_SKR_MINI_E3.h
      *                   -----
      *                    EXP1
      */
     #define BTN_EN1        PA9
     #define BTN_EN2        PA10
-<<<<<<< HEAD:Marlin/src/pins/stm32/pins_BTT_SKR_MINI_E3.h
-    #define DOGLCD_CS      PB8
-    #define DOGLCD_A0      PB9
-    #define DOGLCD_SCK     PA15
-=======
     #define BTN_ENC        PB6
 
     #define DOGLCD_CS      PB8
     #define DOGLCD_A0      PB9
     #define DOGLCD_SCK     PB5
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/pins/stm32/pins_BIGTREE_SKR_MINI_E3.h
     #define DOGLCD_MOSI    PB7
     #define FORCE_SOFT_SPI
     #define LCD_BACKLIGHT_PIN -1

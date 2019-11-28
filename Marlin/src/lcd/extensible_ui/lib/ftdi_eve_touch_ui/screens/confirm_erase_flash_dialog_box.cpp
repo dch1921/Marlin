@@ -22,11 +22,7 @@
 
 #include "../config.h"
 
-<<<<<<< HEAD:Marlin/src/lcd/extensible_ui/lib/lulzbot/screens/confirm_erase_flash_dialog_box.cpp
-#if BOTH(LULZBOT_TOUCH_UI, TOUCH_UI_DEVELOPER_MENU)
-=======
 #if BOTH(TOUCH_UI_FTDI_EVE, TOUCH_UI_DEVELOPER_MENU)
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/lcd/extensible_ui/lib/ftdi_eve_touch_ui/screens/confirm_erase_flash_dialog_box.cpp
 
 #include "screens.h"
 

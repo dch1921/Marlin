@@ -22,11 +22,7 @@
 
 #include "../config.h"
 
-<<<<<<< HEAD:Marlin/src/lcd/extensible_ui/lib/lulzbot/screens/bio_confirm_home_e.cpp
-#if ENABLED(LULZBOT_TOUCH_UI) && defined(TOUCH_UI_LULZBOT_BIO)
-=======
 #if ENABLED(TOUCH_UI_FTDI_EVE) && defined(TOUCH_UI_LULZBOT_BIO)
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/lcd/extensible_ui/lib/ftdi_eve_touch_ui/screens/bio_confirm_home_e.cpp
 
 #include "screens.h"
 

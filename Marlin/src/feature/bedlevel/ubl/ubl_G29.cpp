@@ -790,11 +790,6 @@
 
       } while (best.pos.x >= 0 && --count);
 
-<<<<<<< HEAD
-      ui.release();
-      STOW_PROBE(); // Release UI during stow to allow for PAUSE_BEFORE_DEPLOY_STOW
-      ui.capture();
-=======
       #if HAS_LCD_MENU
         ui.release();
       #endif
@@ -802,7 +797,6 @@
       #if HAS_LCD_MENU
         ui.capture();
       #endif
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21
 
       #ifdef Z_AFTER_PROBING
         move_z_after_probing();

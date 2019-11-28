@@ -22,11 +22,7 @@
 
 #include "../config.h"
 
-<<<<<<< HEAD:Marlin/src/lcd/extensible_ui/lib/lulzbot/screens/status_screen.cpp
-#if ENABLED(LULZBOT_TOUCH_UI) && DISABLED(TOUCH_UI_LULZBOT_BIO) && DISABLED(TOUCH_UI_COCOA_PRESS)
-=======
 #if ENABLED(TOUCH_UI_FTDI_EVE) && DISABLED(TOUCH_UI_LULZBOT_BIO) && DISABLED(TOUCH_UI_COCOA_PRESS)
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/lcd/extensible_ui/lib/ftdi_eve_touch_ui/screens/status_screen.cpp
 
 #include "screens.h"
 #include "screen_data.h"

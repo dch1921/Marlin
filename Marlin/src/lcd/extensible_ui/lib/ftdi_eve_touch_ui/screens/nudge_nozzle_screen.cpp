@@ -68,11 +68,7 @@ void NudgeNozzleScreen::onRedraw(draw_mode_t what) {
       #if HAS_BED_PROBE
         dtostrf(getZOffset_mm(), 4, 2, str);
         strcat(str, " ");
-<<<<<<< HEAD:Marlin/src/lcd/extensible_ui/lib/lulzbot/screens/nudge_nozzle_screen.cpp
-        strcat_P(str, GET_TEXT(UNITS_MM));
-=======
         strcat_P(str, GET_TEXT(MSG_UNITS_MM));
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/lcd/extensible_ui/lib/ftdi_eve_touch_ui/screens/nudge_nozzle_screen.cpp
         w.text_field  (0,  GET_TEXT_F(MSG_ZPROBE_ZOFFSET), str);
       #endif
 

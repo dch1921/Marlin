@@ -676,17 +676,10 @@ G29_TYPE GcodeSuite::G29() {
           inStop = PR_INNER_END;      // Right or back
           inInc = 1;                  // Zig right
         }
-<<<<<<< HEAD
-        else {     // towards origin
-          inStart = PR_INNER_END - 1;
-          inStop = -1;
-          inInc = -1;
-=======
         else {                        // Zag towards origin
           inStart = PR_INNER_END - 1; // Right or back
           inStop = -1;                // Left or front
           inInc = -1;                 // Zag left
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21
         }
 
         zig ^= true; // zag
@@ -753,11 +746,7 @@ G29_TYPE GcodeSuite::G29() {
       for (uint8_t i = 0; i < 3; ++i) {
         if (verbose_level) SERIAL_ECHOLNPAIR("Probing point ", int(i), "/3.");
         #if HAS_DISPLAY
-<<<<<<< HEAD
-          ui.status_printf_P(0, PSTR(S_FMT" %i/3"), GET_TEXT(MSG_PROBING_MESH), int(i));
-=======
           ui.status_printf_P(0, PSTR(S_FMT " %i/3"), GET_TEXT(MSG_PROBING_MESH), int(i));
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21
         #endif
 
         // Retain the last probe position

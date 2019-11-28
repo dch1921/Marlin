@@ -23,11 +23,7 @@
 
 #include "../config.h"
 
-<<<<<<< HEAD:Marlin/src/lcd/extensible_ui/lib/lulzbot/screens/bio_status_screen.cpp
-#if ENABLED(LULZBOT_TOUCH_UI) && (ENABLED(TOUCH_UI_LULZBOT_BIO) || ENABLED(TOUCH_UI_COCOA_PRESS))
-=======
 #if ENABLED(TOUCH_UI_FTDI_EVE) && ANY(TOUCH_UI_LULZBOT_BIO, TOUCH_UI_COCOA_PRESS)
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/lcd/extensible_ui/lib/ftdi_eve_touch_ui/screens/bio_status_screen.cpp
 
 #include "screens.h"
 
@@ -99,26 +95,13 @@ void StatusScreen::draw_temperature(draw_mode_t what) {
          .icon (x + 2, y + 2, h, v, Bed_Heat_Icon_Info, icon_scale * 2)
          .cmd(COLOR_RGB(bg_text_enabled))
          .icon (x, y, h, v, Bed_Heat_Icon_Info, icon_scale * 2);
-<<<<<<< HEAD:Marlin/src/lcd/extensible_ui/lib/lulzbot/screens/bio_status_screen.cpp
-    #endif
-
-    #if ENABLED(TOUCH_UI_COCOA_PRESS)
-=======
     #elif ENABLED(TOUCH_UI_COCOA_PRESS) && DISABLED(TOUCH_UI_PORTRAIT)
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/lcd/extensible_ui/lib/ftdi_eve_touch_ui/screens/bio_status_screen.cpp
       // The CocoaPress shows the temperature for two
       // heating zones, but has no bed temperature
 
       cmd.cmd(COLOR_RGB(bg_text_enabled));
       cmd.font(font_medium);
 
-<<<<<<< HEAD:Marlin/src/lcd/extensible_ui/lib/lulzbot/screens/bio_status_screen.cpp
-      ui.bounds(POLY(zone1_label), x, y, h, v);
-      cmd.text(x, y, h, v, GET_TEXT_F(MSG_ZONE_1));
-
-      ui.bounds(POLY(zone2_label), x, y, h, v);
-      cmd.text(x, y, h, v, GET_TEXT_F(MSG_ZONE_2));
-=======
       ui.bounds(POLY(h0_label), x, y, h, v);
       cmd.text(x, y, h, v, GET_TEXT_F(MSG_ZONE_1));
 
@@ -135,7 +118,6 @@ void StatusScreen::draw_temperature(draw_mode_t what) {
       UNUSED(y);
       UNUSED(h);
       UNUSED(v);
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/lcd/extensible_ui/lib/ftdi_eve_touch_ui/screens/bio_status_screen.cpp
     #endif
 
     #ifdef TOUCH_UI_USE_UTF8
@@ -170,14 +152,8 @@ void StatusScreen::draw_temperature(draw_mode_t what) {
         ui.bounds(POLY(bed_temp), x, y, h, v);
         cmd.text(x, y, h, v, str);
       #endif
-<<<<<<< HEAD:Marlin/src/lcd/extensible_ui/lib/lulzbot/screens/bio_status_screen.cpp
-    #endif
-
-    #if ENABLED(TOUCH_UI_COCOA_PRESS)
-=======
 
     #elif ENABLED(TOUCH_UI_COCOA_PRESS) && DISABLED(TOUCH_UI_PORTRAIT)
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/lcd/extensible_ui/lib/ftdi_eve_touch_ui/screens/bio_status_screen.cpp
       // The CocoaPress shows the temperature for two
       // heating zones, but has no bed temperature
 
@@ -188,11 +164,7 @@ void StatusScreen::draw_temperature(draw_mode_t what) {
       else
         format_temp_and_idle(str, getActualTemp_celsius(E0));
 
-<<<<<<< HEAD:Marlin/src/lcd/extensible_ui/lib/lulzbot/screens/bio_status_screen.cpp
-      ui.bounds(POLY(zone1_temp), x, y, h, v);
-=======
       ui.bounds(POLY(h0_temp), x, y, h, v);
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/lcd/extensible_ui/lib/ftdi_eve_touch_ui/screens/bio_status_screen.cpp
       cmd.text(x, y, h, v, str);
 
       if (!isHeaterIdle(E1) && getTargetTemp_celsius(E1) > 0)
@@ -200,10 +172,6 @@ void StatusScreen::draw_temperature(draw_mode_t what) {
       else
         format_temp_and_idle(str, getActualTemp_celsius(E1));
 
-<<<<<<< HEAD:Marlin/src/lcd/extensible_ui/lib/lulzbot/screens/bio_status_screen.cpp
-      ui.bounds(POLY(zone2_temp), x, y, h, v);
-      cmd.text(x, y, h, v, str);
-=======
       ui.bounds(POLY(h1_temp), x, y, h, v);
       cmd.text(x, y, h, v, str);
 
@@ -224,7 +192,6 @@ void StatusScreen::draw_temperature(draw_mode_t what) {
       cmd.text(x, y, h, v, str);
     #else
       UNUSED(str);
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/lcd/extensible_ui/lib/ftdi_eve_touch_ui/screens/bio_status_screen.cpp
     #endif
   }
 }

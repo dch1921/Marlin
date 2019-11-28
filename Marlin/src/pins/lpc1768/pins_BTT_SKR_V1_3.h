@@ -22,9 +22,6 @@
 #pragma once
 
 #define BOARD_INFO_NAME "BIGTREE SKR 1.3"
-<<<<<<< HEAD:Marlin/src/pins/lpc1768/pins_BTT_SKR_V1_3.h
-
-=======
 
 /**
  * Limit Switches
@@ -56,7 +53,6 @@
   #define Z_MAX_PIN          P1_25   // Z_MIN
 #endif
 
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/pins/lpc1768/pins_BIGTREE_SKR_V1.3.h
 //
 // Servos
 //

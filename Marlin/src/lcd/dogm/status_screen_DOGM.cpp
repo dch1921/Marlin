@@ -460,11 +460,7 @@ void MarlinUI::draw_status_screen() {
                 + get_remaining_time()
               #endif
             );
-<<<<<<< HEAD
-            if (!timeval) timeval = elapsed.value * (100 * (PROGRESS_SCALE) - progress) / progress;
-=======
             if (!timeval && progress > 0) timeval = elapsed.value * (100 * (PROGRESS_SCALE) - progress) / progress;
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21
             if (!timeval) {
               estimation_string[0] = '\0';
               estimation_x_pos = _SD_INFO_X(0);

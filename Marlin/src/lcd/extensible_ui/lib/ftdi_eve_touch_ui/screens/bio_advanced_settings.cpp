@@ -22,11 +22,7 @@
 
 #include "../config.h"
 
-<<<<<<< HEAD:Marlin/src/lcd/extensible_ui/lib/lulzbot/screens/bio_advanced_settings.cpp
-#if ENABLED(LULZBOT_TOUCH_UI) && defined(TOUCH_UI_LULZBOT_BIO)
-=======
 #if ENABLED(TOUCH_UI_FTDI_EVE) && defined(TOUCH_UI_LULZBOT_BIO)
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/lcd/extensible_ui/lib/ftdi_eve_touch_ui/screens/bio_advanced_settings.cpp
 
 #include "screens.h"
 
@@ -48,26 +44,6 @@ void AdvancedSettingsMenu::onRedraw(draw_mode_t what) {
     #define GRID_COLS 2
 
       .tag(2) .button( BTN_POS(1,1), BTN_SIZE(1,1), GET_TEXT_F(MSG_DISPLAY_MENU))
-<<<<<<< HEAD:Marlin/src/lcd/extensible_ui/lib/lulzbot/screens/bio_advanced_settings.cpp
-      #if HAS_TRINAMIC
-       .enabled(1)
-      #else
-       .enabled(0)
-      #endif
-      .tag(3) .button( BTN_POS(1,2), BTN_SIZE(1,1), GET_TEXT_F(MSG_TMC_CURRENT))
-      #if HAS_TRINAMIC
-       .enabled(1)
-      #else
-       .enabled(0)
-      #endif
-      .tag(4) .button( BTN_POS(1,3), BTN_SIZE(1,1), GET_TEXT_F(MSG_TMC_HOMING_THRS))
-      .tag(5) .button( BTN_POS(1,4), BTN_SIZE(1,1), GET_TEXT_F(MSG_LCD_ENDSTOPS))
-      #if HOTENDS > 1
-      .enabled(1)
-      #else
-      .enabled(0)
-      #endif
-=======
       .enabled(
         #if HAS_TRINAMIC
           1
@@ -86,7 +62,6 @@ void AdvancedSettingsMenu::onRedraw(draw_mode_t what) {
           1
         #endif
       )
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/lcd/extensible_ui/lib/ftdi_eve_touch_ui/screens/bio_advanced_settings.cpp
       .tag(6) .button( BTN_POS(1,5), BTN_SIZE(1,1), GET_TEXT_F(MSG_OFFSETS_MENU))
 
 
@@ -95,25 +70,9 @@ void AdvancedSettingsMenu::onRedraw(draw_mode_t what) {
       .tag(9) .button( BTN_POS(2,3), BTN_SIZE(1,1), GET_TEXT_F(MSG_ACCELERATION))
       #if DISABLED(CLASSIC_JERK)
         .tag(10) .button( BTN_POS(2,4), BTN_SIZE(1,1), GET_TEXT_F(MSG_JUNCTION_DEVIATION))
-<<<<<<< HEAD:Marlin/src/lcd/extensible_ui/lib/lulzbot/screens/bio_advanced_settings.cpp
       #else
         .tag(10) .button( BTN_POS(2,4), BTN_SIZE(1,1), GET_TEXT_F(MSG_JERK))
       #endif
-      #if ENABLED(BACKLASH_GCODE)
-      .enabled(1)
-      #else
-      .enabled(0)
-      #endif
-      .tag(11) .button( BTN_POS(2,5), BTN_SIZE(1,1), GET_TEXT_F(MSG_BACKLASH))
-      #if ENABLED(LIN_ADVANCE)
-      .enabled(1)
-=======
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/lcd/extensible_ui/lib/ftdi_eve_touch_ui/screens/bio_advanced_settings.cpp
-      #else
-        .tag(10) .button( BTN_POS(2,4), BTN_SIZE(1,1), GET_TEXT_F(MSG_JERK))
-      #endif
-<<<<<<< HEAD:Marlin/src/lcd/extensible_ui/lib/lulzbot/screens/bio_advanced_settings.cpp
-=======
       .enabled(
         #if ENABLED(BACKLASH_GCODE)
           1
@@ -125,7 +84,6 @@ void AdvancedSettingsMenu::onRedraw(draw_mode_t what) {
           1
         #endif
       )
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21:Marlin/src/lcd/extensible_ui/lib/ftdi_eve_touch_ui/screens/bio_advanced_settings.cpp
       .tag(12) .button( BTN_POS(1,6), BTN_SIZE(2,1), GET_TEXT_F(MSG_LINEAR_ADVANCE))
       .tag(13) .button( BTN_POS(1,7), BTN_SIZE(2,1), GET_TEXT_F(MSG_INTERFACE_SETTINGS))
       .tag(14) .button( BTN_POS(1,8), BTN_SIZE(2,1), GET_TEXT_F(MSG_RESTORE_FAILSAFE))

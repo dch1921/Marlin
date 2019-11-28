@@ -307,11 +307,7 @@ void menu_cancelobject();
       #if ENABLED(PID_FAN_SCALING)
         #define _PID_EDIT_MENU_ITEMS(N) \
           _PID_BASE_MENU_ITEMS(N); \
-<<<<<<< HEAD
-          EDIT_ITEM(float3, MSG_PID_C_E, N, &PID_PARAM(Kc, N), 1, 9990)
-=======
           EDIT_ITEM(float3, PID_LABEL(MSG_PID_F,N), &PID_PARAM(Kf, N), 1, 9990)
->>>>>>> 5a98c83eef09daf5f59e08c8518827861eb92e21
       #else
         #define _PID_EDIT_MENU_ITEMS(N) _PID_BASE_MENU_ITEMS(N)
       #endif
